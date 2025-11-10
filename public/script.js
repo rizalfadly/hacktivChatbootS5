@@ -22,7 +22,7 @@ form.addEventListener('submit', async function (e) {
       },
       // Match the backend expectation: { "message": "..." }
       body: JSON.stringify({ 
-        message: [{ role: 'user', text: userMessage }],
+        messages: [{ role: 'user', text: userMessage }],
       }),
     });
 
@@ -36,8 +36,8 @@ form.addEventListener('submit', async function (e) {
 
     // Update the "Thinking..." message with the actual reply
     // Match the backend response: data.reply
-    if (data && data.reply) {
-      thinkingMsgElement.textContent = data.reply;
+    if (data.result) {
+      thinkingMsgElement.textContent = data.result;
     } else {
       thinkingMsgElement.textContent = 'Sorry, no response received.';
     }
