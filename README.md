@@ -1,2 +1,3 @@
-how to run, node lain.js
+how to run.
 
+node index.js
