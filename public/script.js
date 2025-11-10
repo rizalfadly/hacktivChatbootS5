@@ -52,6 +52,8 @@ function appendMessage(sender, text) {
   const msg = document.createElement('div');
   msg.classList.add('message', sender);
   msg.textContent = text;
+
+  
   chatBox.appendChild(msg);
   chatBox.scrollTop = chatBox.scrollHeight;
   return msg; // Return the element so it can be modified
